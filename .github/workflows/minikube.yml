@@ -45,7 +45,7 @@ jobs:
       run: terraform validate
 
     - name: Terraform Plan
-      run: terraform plan force-unlock
+      run: terraform plan -chdir=terraform-dir force-unlock
 
     - name: Terraform Apply
       run: terraform apply -auto-approve
