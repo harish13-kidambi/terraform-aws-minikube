@@ -41,7 +41,7 @@ resource "aws_instance" "workstation" {
     key_name = aws_key_pair.kubernetes.key_name
     vpc_security_group_ids = [aws_security_group.allow_tls.id]
     user_data = "${file("scripts/docker.sh")}"
-    subnet_id = local.public_subnet_ids[0]
+    subnet_id = local.public_subnet_ids[1]
     associate_public_ip_address = true
     tags = {
         Name = "workstation"
