@@ -32,7 +32,7 @@ variable "key_name" {
 }
 
 variable "key_location" {
-  default = "C:\\Users\\Harish\\kubernetes.pub"
+  default = "id_ed25519.pub"
 }
 
 variable "hosted_zone" {
