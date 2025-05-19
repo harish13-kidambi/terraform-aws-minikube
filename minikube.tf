@@ -5,9 +5,7 @@ module "minikube" {
   cluster_name       = var.project_name
   aws_instance_type  = "t3.medium"
   ssh_public_key     = file(var.key_location)
-  aws_subnet_id      = var.public_subnet_id
-  hosted_zone        = var.hosted_zone
-  hosted_zone_private = false
+  aws_subnet_id      = var.public_subnet_cidr
 
   tags = {
     Application = var.project_name
