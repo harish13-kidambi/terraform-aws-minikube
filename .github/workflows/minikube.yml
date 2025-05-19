@@ -3,7 +3,7 @@ name: Deploy Minikube to AWS
 on:
   push:
     branches:
-      - 
+      - Master
   workflow_dispatch:
 
 jobs:
