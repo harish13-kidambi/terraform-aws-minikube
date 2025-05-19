@@ -32,7 +32,7 @@ variable "aws_region" {
 }
 
 variable "key_name" {
-  default = "kubernetes"
+  default = "k8"
 }
 
 variable "key_location" {
