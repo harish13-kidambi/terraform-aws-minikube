@@ -32,11 +32,11 @@ variable "aws_region" {
 }
 
 variable "key_name" {
-  default = "k8"
+  default = "k8s"
 }
 
 variable "key_location" {
-  default = "k8s.pub"
+  default = "H:\\tf-docker-k8\\terraform-aws-minikube\\k8s.pub"
 }
 
 variable "hosted_zone" {

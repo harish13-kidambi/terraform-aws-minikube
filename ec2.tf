@@ -1,5 +1,5 @@
 # this EC2 is for Docker workstation
-resource "aws_key_pair" "kubernetes" {
+resource "aws_key_pair" "k8s" {
   key_name   = var.key_name
   public_key = file(var.key_location)
 }
@@ -38,7 +38,7 @@ resource "aws_instance" "workstation" {
     root_block_device  {
       volume_size = 20
     }
-    key_name = aws_key_pair.kubernetes.key_name
+    key_name = aws_key_pair.k8s.key_name
     vpc_security_group_ids = [aws_security_group.allow_tls.id]
     user_data = "${file("scripts/docker.sh")}"
     subnet_id = local.public_subnet_ids[0]

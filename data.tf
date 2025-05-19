@@ -21,3 +21,4 @@ data "aws_ami" "ami_id" {
 
 data "aws_region" "current" {}
 
+

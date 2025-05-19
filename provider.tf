@@ -13,7 +13,13 @@ terraform {
     bucket         = "terraform-docker-kub8-resource"
     key            = "minikube/terraform.tfstate"
     region         = "ap-south-1"
-    dynamodb_table = "terraform-lock"
     encrypt        = true
   }
+}
+
+provider "aws" {
+  # Configuration options
+  region = "ap-south-1"
+  #access_key = "AKIAYSMUYFFIFNQRXMFE"
+  #secret_key = "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"
 }
