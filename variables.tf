@@ -40,6 +40,6 @@ variable "key_location" {
 }
 
 variable "hosted_zone" {
-  default = "ramakrishna.fun"
+  default = "ramakrishna.fun."
 }
 
