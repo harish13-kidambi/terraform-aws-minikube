@@ -1,13 +1,12 @@
 module "minikube" {
   source = "github.com/scholzj/terraform-aws-minikube"
 
-  aws_region    = data.aws_region.current.name
-  cluster_name  = var.project_name
-  aws_instance_type = "t3.medium"
-  # we upload public key to EC2 instances
-  ssh_public_key = var.key_location
-  aws_subnet_id = local.public_subnet_ids[0] #ap-south-1a public subnet
-  hosted_zone = var.hosted_zone
+  aws_region         = var.aws_region
+  cluster_name       = var.project_name
+  aws_instance_type  = "t3.medium"
+  ssh_public_key     = file(var.key_location)
+  aws_subnet_id      = var.public_subnet_id
+  hosted_zone        = var.hosted_zone
   hosted_zone_private = false
 
   tags = {
@@ -15,9 +14,9 @@ module "minikube" {
   }
 
   addons = [
+    "https://raw.githubusercontent.com/kubernetes-sigs/metrics-server/master/components.yaml",
+    "https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml",
     "https://raw.githubusercontent.com/scholzj/terraform-aws-minikube/master/addons/storage-class.yaml",
-    "https://raw.githubusercontent.com/scholzj/terraform-aws-minikube/master/addons/heapster.yaml",
-    "https://raw.githubusercontent.com/scholzj/terraform-aws-minikube/master/addons/dashboard.yaml",
     "https://raw.githubusercontent.com/scholzj/terraform-aws-minikube/master/addons/external-dns.yaml"
   ]
 }
