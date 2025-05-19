@@ -10,7 +10,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "terraform-k8-course"
+    bucket         = "terraform-docker-kub8-resource"
     key            = "minikube/terraform.tfstate"
     region         = "ap-south-1"
     dynamodb_table = "terraform-lock"
