@@ -20,3 +20,7 @@ data "aws_ami" "ami_id" {
 }
 
 data "aws_region" "current" {}
+
+data "aws_route53_zone" "dns_zone" {
+  name = var.hosted_zone
+}
