@@ -36,7 +36,7 @@ variable "key_name" {
 }
 
 variable "key_location" {
-  default = "id_ed25519.pub"
+  default = "k8s.pub"
 }
 
 variable "hosted_zone" {
