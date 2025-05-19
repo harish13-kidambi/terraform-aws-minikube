@@ -8,7 +8,7 @@ on:
 
 jobs:
   terraform:
-    name: Terraform Apply
+    name: Terraform 
     runs-on: ubuntu-latest
 
     defaults:
@@ -45,7 +45,7 @@ jobs:
       run: terraform validate
 
     - name: Terraform Plan
-      run: terraform plan
+      run: terraform plan force-unlock
 
     - name: Terraform Apply
       run: terraform apply -auto-approve
