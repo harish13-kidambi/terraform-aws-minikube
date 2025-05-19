@@ -27,6 +27,10 @@ variable "database_subnet_cidr" {
   default = ["10.0.21.0/24","10.0.22.0/24"]
 }
 
+variable "aws_region" {
+  default = "ap-south-1"
+}
+
 variable "key_name" {
   default = "kubernetes"
 }
